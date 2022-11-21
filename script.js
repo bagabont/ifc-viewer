@@ -1,6 +1,7 @@
 const divInstall = document.getElementById('installContainer');
 const butInstall = document.getElementById('butInstall');
 
+function registerServiceWorker(){
 /* Only register a service worker if it's supported */
 if ('serviceWorker' in navigator) {
   navigator.serviceWorker.register('service-worker.js');
@@ -18,3 +19,6 @@ if (window.location.protocol === 'http:') {
   link.href = window.location.href.replace('http://', 'https://');
   requireHTTPS.classList.remove('hidden');
 }
+}
+
+registerServiceWorker();
